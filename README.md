@@ -3,9 +3,9 @@
 ## Skill & Tools
 
 - **Scrapy 2.19** — framework scraping Python
-- **Playwright / scrapy-playwright** — render halaman JavaScript di browser sungguhan
+- **Playwright / scrapy-playwright** — render halaman JavaScript di browser
 - **CSS / XPath selector** — ekstraksi data dari HTML
-- **API JSON** — konsumsi endpoint API publik
+- **API JSON** — mengambil endpoint API publik
 - **Data pipeline** — pembersihan data sebelum disimpan
 
 ## Contoh Project
@@ -30,28 +30,9 @@
 
 ### 4. JS Quotes Scraper — Playwright / Render Browser
 - **File:** `jobscraper/jobscraper/spiders/jsquotes.py`
-- **Target:** quotes.toscrape.com/js/ (halaman yang datanya diproduksi JavaScript)
-- **Sumber data:** browser sungguhan via Playwright
-- **Hasil:** 10 quotes (HTML mentahnya kosong, butuh render JS)
-
-## Cara Menjalankan
-
-```bash
-cd jobscraper
-
-# 1. Buat venv & install dependensi
-python3 -m venv .venv && source .venv/bin/activate
-pip install scrapy scrapy-playwright playwright
-
-# 2. Install browser untuk spider Playwright
-python3 -m playwright install --with-deps chromium
-
-# 3. Jalankan spider
-scrapy crawl quotes -O quotes.csv
-scrapy crawl books -O books.csv
-scrapy crawl hackernews -O hackernews.csv
-scrapy crawl jsquotes -O jsquotes.csv
-```
+- **Target:** quotes.toscrape.com/js/ 
+- **Sumber data:** browser via Playwright
+- **Hasil:** 10 quotes
 
 ### Catatan Scrapy 2.19
 Scrapy versi 2.19 menggunakan `async def start()` (bukan `start_requests()`). Spiders di repo ini sudah mengikuti API terbaru.
