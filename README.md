@@ -34,6 +34,12 @@
 - **Sumber data:** browser via Playwright
 - **Hasil:** 10 quotes
 
+### 5. Catalog Scraper — 1.000 Buku ke CSV (httpx + lxml, tanpa framework)
+- **File:** `catalog-scraper/scrape_books.py` (+ hasil `catalog-scraper/buku.csv`)
+- **Target:** books.toscrape.com (50 halaman)
+- **Sumber data:** HTML + pagination otomatis, jeda sopan 0,5 dtk/request
+- **Hasil:** 1.000 baris CSV (judul, harga, rating, stok) — file hasil nyata ada di repo
+
 ### Catatan Scrapy 2.19
 Scrapy versi 2.19 menggunakan `async def start()` (bukan `start_requests()`). Spiders di repo ini sudah mengikuti API terbaru.
 
